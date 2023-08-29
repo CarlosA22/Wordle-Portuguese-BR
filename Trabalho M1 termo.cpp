@@ -143,10 +143,6 @@ int enquantoJoga(int qntPalavras, int qntPalavras2)
     }
     else if (qntTentativas == 8 and qntPalavras2 == 3) //se o jogador escolher 3 palavras, ele terá 8 tentativas
     {
-		for (int i = 0; i < 8; i++)
-		{ }
-    }
-    {
         for (int i = 0; i < 8; i++)
         {
 			cout << "digite uma palavra: ";
