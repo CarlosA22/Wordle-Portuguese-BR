@@ -44,7 +44,7 @@ int tentativas(int NUM_PALAVRAS = 1) //função que define a quantidade de tentati
 }
 
 
-void enquantoJoga(int qntPalavras, int qntPalavras2)
+void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que acontece enquanto o jogador joga
 {
     static string vet1[5], vet2[5], vet3[5], vet4[5], vet5[5], vet6[5], vet7[5], vet8[5], vet9[5];
     int qntTentativas = 0;
