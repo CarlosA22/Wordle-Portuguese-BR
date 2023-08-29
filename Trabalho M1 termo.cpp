@@ -3,15 +3,17 @@
 // pode haver problemas ao utilizar outros compiladores
 // para abrir o código corretamente abra o arquivo SLN no Visual Studio Enterprise 2022.
 // O código foi feito para ser executado no terminal do Windows 10/11, não foi testado em outros sistemas operacionais. 
-// 
+// Caso o professor insistir em utilizar um IDE/Compilador de terceiros e o programa não executar como esperado, o mesmo estará afirmando que o Gremio nunca chegara aos pes do Internacional SC.
 
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 #include "dicionario.hpp"
 
 void menuWordle()
 {
+    int qntPalavras = 0;
     int opcao = 0;
     do {
         // Exibe o menu
@@ -22,12 +24,16 @@ void menuWordle()
         cin >> opcao;
 
         // Processa a escolha do jogador
-        switch (opcao) {
+        switch (opcao) 
+        {
         case 1:
+            system("cls");
             cout<<"Com quantas palavras simultaneas voce deseja jogar? (1, 2, 3 ou 4): ";
-            // Lógica para iniciar um novo jogo
+            cin >> qntPalavras;
+            tentativas(qntPalavras);
             break;
         case 2:
+            system("cls");
             cout << "Alunos: Carlos Augusto Mallmann Serena\n Felipe" << endl;
             cout<< "Disciplina: Algoritmos e Programação II" << endl;
             cout << "Professor: Marcos Carrard" << endl;
@@ -42,49 +48,45 @@ void menuWordle()
             // Creditos e mais informações sobre o jogo
             break;
         default:
+            system("cls");
             cout << "Opção inválida. Tente novamente." << endl;
             break;
         }
     } while (opcao != 3);
 }
 
-int dificuldade(int qntPalavras = 1)
+
+void tentativas(int NUM_PALAVRAS = 1)
 {
-    do {
-		cout << "Com quantas palavras simultaneas voce deseja jogar? (1, 2, 3 ou 4): ";
-		cin >> qntPalavras;
-        if (qntPalavras < 1 || qntPalavras > 4)
-        {
-			cout << "Quantidade de palavras invalida";
-		}
-	} while (qntPalavras < 1 || qntPalavras > 4);
-	
-    return qntPalavras;
-}
+    static int vet1[1], vet2[1], vet3[1], vet4[1], vet5[1], vet6[1], vet7[1], vet8[1], vet9[1];
+    static int mapa = 0;
+    static int tentativas = 0;
 
-int tentativas()
-{
-    int  num_tentativas = 0;
-    int  num_palavras = 0;
-
-
-}
-
-void mapaArray1()
-{
-    int mapa[5][7];
-	int i, j;
-    for (i = 0; i < 5; i++) {
-		for (j = 0; j < 7; j++)
-			mapa[i][j] = 0;
+    if (NUM_PALAVRAS == 1)
+    {
+		tentativas = 7;
 	}
-    for (i = 0; i < 5; i++) {
-		for (j = 0; j < 7; j++)
-			cout << mapa[i][j] << " ";
-		cout << endl;
+    else if (NUM_PALAVRAS == 2)
+    {
+		tentativas = 7;
 	}
-}
+    else if (NUM_PALAVRAS == 3)
+    {
+		tentativas = 8;
+	}
+    else if (NUM_PALAVRAS == 4)
+    {
+		tentativas = 9;
+	}
+    else
+    {
+        system("cls");
+		cout << "Opção inválida. Tente novamente." << endl;
+	}
 
+
+
+}
 
 void palavrasDicionario()
 {
