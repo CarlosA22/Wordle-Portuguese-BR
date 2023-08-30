@@ -54,8 +54,8 @@ void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que a
     string p3 = lista[rand() % TAM_LISTA];
     string p4 = lista[rand() % TAM_LISTA];
 
-    qntTentativas = qntPalavras;
-    tentativas(qntPalavras); //chama a função tentativas para definir a quantidade de tentativas de acordo com a quantidade de palavras escolhidas pelo jogador
+    
+    qntTentativas = tentativas(qntPalavras); //chama a função tentativas para definir a quantidade de tentativas de acordo com a quantidade de palavras escolhidas pelo jogador
 
 
     if (qntTentativas == 7 and qntPalavras2 == 1) //se o jogador escolher 1 palavra, ele terá 7 tentativas
@@ -136,6 +136,7 @@ void menuWordle()
         cout << "===== W O R D L E ! (v0.1) =====" << endl;
         cout << "1. Iniciar Novo Jogo" << endl;
         cout << "2. Sobre" << endl;
+        cout << "3. Sair" << endl;
         cout << "Escolha uma opção: ";
         cin >> opcao;
 
@@ -180,7 +181,6 @@ void menuWordle()
 int main()
 {
     srand(time(NULL)); // inicializa a semente de números aleatórios
-
 
     menuWordle();
 

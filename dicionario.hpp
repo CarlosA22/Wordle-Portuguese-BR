@@ -2,8 +2,8 @@
 // Origem: https://www.ime.usp.br/~pf/dicios/br-sem-acentos.txt
 //
 
-#ifndef DICIONARIO_HPP_INCLUDED
-#define DICIONARIO_HPP_INCLUDED
+//#ifndef DICIONARIO_HPP_INCLUDED
+//#define DICIONARIO_HPP_INCLUDED
 //Ao usar proteções de inclusão como essa, você garante que o conteúdo do arquivo de cabeçalho seja incluído apenas uma vez em cada unidade de compilação, evitando problemas associados a múltiplas inclusões. Esta é uma prática comum em arquivos de cabeçalho C e C++ para manter a correção do código e evitar problemas com redefinição de símbolos e aumento do tempo de compilação.
 #include <iostream>
 using namespace std;
@@ -5493,4 +5493,4 @@ string lista[TAM_LISTA] = {
     "ZURRE",
     "ZURRO"
 };
-#endif // DICIONARIO_HPP_INCLUDED
+//#endif // DICIONARIO_HPP_INCLUDED
