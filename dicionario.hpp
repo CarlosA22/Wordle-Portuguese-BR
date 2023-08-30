@@ -7,10 +7,18 @@
 //Ao usar proteções de inclusão como essa, você garante que o conteúdo do arquivo de cabeçalho seja incluído apenas uma vez em cada unidade de compilação, evitando problemas associados a múltiplas inclusões. Esta é uma prática comum em arquivos de cabeçalho C e C++ para manter a correção do código e evitar problemas com redefinição de símbolos e aumento do tempo de compilação.
 #include <iostream>
 using namespace std;
-#define TAM_LISTA 5481
+#define TAM_LISTA 4
+//5481
 
+string lista[TAM_LISTA] =
+{
+    "VIDRO",
+    "AREIA",
+    "SENSO",
+    "MORRO"
+};
 
-string lista[TAM_LISTA] = {
+/*string lista[TAM_LISTA] = {
     "AARAO",
     "ABACO",
     "ABADE",
@@ -5492,5 +5500,5 @@ string lista[TAM_LISTA] = {
     "ZURRA",
     "ZURRE",
     "ZURRO"
-};
+};*/
 //#endif // DICIONARIO_HPP_INCLUDED

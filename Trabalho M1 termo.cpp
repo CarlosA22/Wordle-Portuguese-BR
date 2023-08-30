@@ -54,7 +54,7 @@ void verificarLetra(const string& palavraSorteada, const string& chute) {
 
     // Verificar se a letra está na palavra sorteada
     for (int i = 0; i < tamanho; i++) {
-        if (palavraSorteada[i] == chute[0]) {
+        if (palavraSorteada[i] == chute[i]) {
             letraEncontrada = true;
 
             // Verificar se a letra está no lugar correto
@@ -65,23 +65,26 @@ void verificarLetra(const string& palavraSorteada, const string& chute) {
     }
 
     // Exibir feedback
-    if (letraEncontrada) {
-        if (lugarCorreto) {
-            cout << "A letra '" << chute[0] << "' pertence à palavra sorteada e está no lugar correto." << endl;
+    for (int i = 0; i < tamanho; i++)
+    {
+        if (letraEncontrada) {
+            if (lugarCorreto) {
+                cout << "A letra '" << chute[i] << "' pertence à palavra sorteada e está no lugar correto." << endl;
+            }
+            else {
+                cout << "A letra '" << chute[i] << "' pertence à palavra sorteada, mas está no lugar errado." << endl;
+            }
         }
         else {
-            cout << "A letra '" << chute[0] << "' pertence à palavra sorteada, mas está no lugar errado." << endl;
+            cout << "A letra '" << chute[i] << "' não pertence à palavra sorteada." << endl;
         }
-    }
-    else {
-        cout << "A letra '" << chute[0] << "' não pertence à palavra sorteada." << endl;
     }
 }
 
 void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que acontece enquanto o jogador joga
 {
 
-    static string vet1[7], vet2[7], vet3[8], vet4[9];
+    static string vet1[7], vet2[7], vet3[8], vet4[9]; //vetores para armazenar as tentativas
     int qntTentativas = 0;
     vector<string> historicoChutes; //vetor para armazenar os chutes do jogador
 
@@ -233,7 +236,7 @@ void menuWordle()
             break;
         case 2: // Creditos e mais informações sobre o jogo
             system("cls");
-            cout << "Alunos: Carlos Augusto Mallmann Serena\n Felipe" << endl;
+            cout << "Alunos: Carlos Augusto Mallmann Serena\n Felipe Franco" << endl;
             cout<< "Disciplina: Algoritmos e Programação II" << endl;
             cout << "Professor: Marcos Carrard" << endl;
             cout << "Instituição: UNIVALI" << endl;
@@ -263,7 +266,6 @@ void menuWordle()
 int main()
 {
     srand(time(NULL)); // inicializa a semente de números aleatórios
-
     menuWordle();
 
     return 0;
