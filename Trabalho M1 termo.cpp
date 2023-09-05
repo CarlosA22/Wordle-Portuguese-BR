@@ -47,18 +47,21 @@ int tentativas(int NUM_PALAVRAS = 1) //função que define a quantidade de tentati
 }
 
 // Função para verificar uma letra na palavra sorteada
-void verificarLetra(const string& palavraSorteada, const string& chute) {
+void verificarLetra(string& palavraSorteada, string& chute) {
     int tamanho = palavraSorteada.length();
     bool letraEncontrada = false;
     bool lugarCorreto = false;
 
     // Verificar se a letra está na palavra sorteada
-    for (int i = 0; i < tamanho; i++) {
-        if (palavraSorteada[i] == chute[i]) {
+    for (int i = 0; i < tamanho; i++) 
+    {
+        if (palavraSorteada[i] == chute[i])
+        {
             letraEncontrada = true;
 
             // Verificar se a letra está no lugar correto
-            if (i == 0) {
+            if (i == 0) 
+            {
                 lugarCorreto = true;
             }
         }
@@ -67,8 +70,8 @@ void verificarLetra(const string& palavraSorteada, const string& chute) {
     // Exibir feedback
     for (int i = 0; i < tamanho; i++)
     {
-        if (letraEncontrada) {
-            if (lugarCorreto) {
+        if (letraEncontrada == true) {
+            if (lugarCorreto == true) {
                 cout << "A letra '" << chute[i] << "' pertence à palavra sorteada e está no lugar correto." << endl;
             }
             else {
@@ -84,7 +87,7 @@ void verificarLetra(const string& palavraSorteada, const string& chute) {
 void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que acontece enquanto o jogador joga
 {
 
-    static string vet1[7], vet2[7], vet3[8], vet4[9]; //vetores para armazenar as tentativas
+    string vet1[7], vet2[7], vet3[8], vet4[9]; //vetores para armazenar as tentativas
     int qntTentativas = 0;
     vector<string> historicoChutes; //vetor para armazenar os chutes do jogador
 
