@@ -1,9 +1,6 @@
-// Carlos Augusto Mallmann Serena, Felipe
-//ATENÇÃO: código foi testado APENAS no Visual Studio Enterprise 2022, utilizando o compilador MSVC incluido nesta IDE.
-// pode haver problemas ao utilizar outros compiladores
-// para abrir o código corretamente abra o arquivo SLN no Visual Studio Enterprise 2022.
-// O código foi feito para ser executado no terminal do Windows 10/11, não foi testado em outros sistemas operacionais. 
-// Caso o professor insistir em utilizar um IDE/Compilador de terceiros e o programa não executar como esperado, o mesmo estará afirmando que o Gremio nunca chegara aos pes do Internacional SC.
+// Carlos Augusto Mallmann Serena
+
+//TODO: vetor que armazena o status da letra. (local correto ou nao, etc).
 
 //tem que mostrar todos os chutes.
 #include <iostream> //para usar o cout e cin
@@ -50,6 +47,39 @@ int tentativas(int NUM_PALAVRAS = 1) //função que define a quantidade de tentati
 void verificarLetra(string& palavraSorteada, string& chute) {
     int tamanho = palavraSorteada.length();
     bool letraEncontrada = false;
+
+    // Verificar se a letra está na palavra sorteada
+    for (int i = 0; i < tamanho; i++)
+    {
+        if (palavraSorteada[i] == chute[i])
+        {
+            letraEncontrada = true;
+            cout << "A letra '" << chute[i] << "' pertence à palavra sorteada e está no lugar correto." << endl;
+        }
+    }
+
+    // Se a letra não estiver no lugar correto, verifique se ela está na palavra sorteada
+    if (!letraEncontrada)
+    {
+        for (int i = 0; i < tamanho; i++)
+        {
+            if (palavraSorteada.find(chute[i]) != string::npos)
+            {
+                cout << "A letra '" << chute[i] << "' pertence à palavra sorteada, mas está no lugar errado." << endl;
+            }
+            else
+            {
+                cout << "A letra '" << chute[i] << "' não pertence à palavra sorteada." << endl;
+            }
+        }
+    }
+}
+
+
+/*// Função para verificar uma letra na palavra sorteada
+void verificarLetra(string& palavraSorteada, string& chute) {
+    int tamanho = palavraSorteada.length();
+    bool letraEncontrada = false;
     bool lugarCorreto = false;
 
     // Verificar se a letra está na palavra sorteada
@@ -60,7 +90,7 @@ void verificarLetra(string& palavraSorteada, string& chute) {
             letraEncontrada = true;
 
             // Verificar se a letra está no lugar correto
-            if (i == 0) 
+            if (i == 0)
             {
                 lugarCorreto = true;
             }
@@ -82,7 +112,7 @@ void verificarLetra(string& palavraSorteada, string& chute) {
             cout << "A letra '" << chute[i] << "' não pertence à palavra sorteada." << endl;
         }
     }
-}
+}*/
 
 void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que acontece enquanto o jogador joga
 {
@@ -111,6 +141,7 @@ void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que a
                 if (vet1[i] == p1)
                 {
                     cout << "voce acertou";
+                   
                 }
                 else
                 { 
@@ -167,6 +198,7 @@ void enquantoJoga(int qntPalavras, int qntPalavras2) //função que define o que a
             if (vet3[i] == p1 or vet3[i] == p2 or vet3[i] == p3)
             {
                 cout << "voce acertou";
+
             }
             else
             {
@@ -221,7 +253,7 @@ void menuWordle()
     int opcao = 0;
     do {
         // Exibe o menu
-        cout << "===== W O R D L E ! (v0.2) =====" << endl;
+        cout << "===== W O R D L E ! (v1.0) =====" << endl;
         cout << "1. Iniciar Novo Jogo" << endl;
         cout << "2. Sobre" << endl;
         cout << "3. Sair" << endl;
